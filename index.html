@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <title>Recipes</title>
 </head>
 
@@ -34,6 +35,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </body>
 <script>
     fetch('navbar.html')
@@ -41,5 +43,93 @@
       .then(data => {
         document.getElementById('navbar').innerHTML = data;
       });
+    
+var map = L.map('map').setView([20, 0], 2);
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// السعودية
+const saudi = L.marker([23.8859, 45.0792]).addTo(map);
+saudi.bindPopup("<b>Saudi Arabia</b><br><a href='middleast.html'>View Recipes</a>");
+
+// لبنان
+const lebanon = L.marker([33.8547, 35.8623]).addTo(map);
+lebanon.bindPopup("<b>Lebanon</b><br><a href='middleast.html'>View Recipes</a>");
+
+// فرنسا
+const france = L.marker([46.6034, 1.8883]).addTo(map);
+france.bindPopup("<b>France</b><br><a href='europe.html'>View Recipes</a>");
+
+// إيطاليا
+const italy = L.marker([41.8719, 12.5674]).addTo(map);
+italy.bindPopup("<b>Italy</b><br><a href='europe.html'>View Recipes</a>");
+
+// المكسيك
+const mexico = L.marker([23.6345, -102.5528]).addTo(map);
+mexico.bindPopup("<b>Mexico</b><br><a href='south-america.html'>View Recipes</a>");
+
+// مصر
+const egypt = L.marker([26.8206, 30.8025]).addTo(map);
+egypt.bindPopup("<b>Egypt</b><br><a href='middleast.html'>View Recipes</a>");
+
+// البرازيل
+const brazil = L.marker([-14.2350, -51.9253]).addTo(map);
+brazil.bindPopup("<b>Brazil</b><br><a href='south-america.html'>View Recipes</a>");
+
+// كولومبيا
+const colombia = L.marker([4.5709, -74.2973]).addTo(map);
+colombia.bindPopup("<b>Colombia</b><br><a href='south-america.html'>View Recipes</a>");
+
+// كوبا
+const cuba = L.marker([21.5218, -77.7812]).addTo(map);
+cuba.bindPopup("<b>Cuba</b><br><a href='south-america.html'>View Recipes</a>");
+
+// الإمارات
+const uae = L.marker([23.4241, 53.8478]).addTo(map);
+uae.bindPopup("<b>UAE</b><br><a href='middleast.html'>View Recipes</a>");
+
+// فلسطين
+const palestine = L.marker([31.9522, 35.2332]).addTo(map);
+palestine.bindPopup("<b>Palestine</b><br><a href='middleast.html'>View Recipes</a>");
+
+// العراق
+const iraq = L.marker([33.2232, 43.6793]).addTo(map);
+iraq.bindPopup("<b>Iraq</b><br><a href='middleast.html'>View Recipes</a>");
+
+// تركيا
+const turkey = L.marker([38.9637, 35.2433]).addTo(map);
+turkey.bindPopup("<b>Turkey</b><br><a href='europe.html'>View Recipes</a>");
+
+// إسبانيا
+const spain = L.marker([40.4637, -3.7492]).addTo(map);
+spain.bindPopup("<b>Spain</b><br><a href='europe.html'>View Recipes</a>");
+
+// اليابان
+const japan = L.marker([36.2048, 138.2529]).addTo(map);
+japan.bindPopup("<b>Japan</b><br><a href='asia.html'>View Recipes</a>");
+
+// تايلند
+const thailand = L.marker([15.8700, 100.9925]).addTo(map);
+thailand.bindPopup("<b>Thailand</b><br><a href='asia.html'>View Recipes</a>");
+
+// الصين
+const china = L.marker([35.8617, 104.1954]).addTo(map);
+china.bindPopup("<b>China</b><br><a href='asia.html'>View Recipes</a>");
+
+// الهند
+const india = L.marker([20.5937, 78.9629]).addTo(map);
+india.bindPopup("<b>India</b><br><a href='asia.html'>View Recipes</a>");
+
+// روسيا
+const russia = L.marker([61.5240, 105.3188]).addTo(map);
+russia.bindPopup("<b>Russia</b><br><a href='asia.html'>View Recipes</a>");
+
+// كوريا الجنوبية
+const korea = L.marker([35.9078, 127.7669]).addTo(map);
+korea.bindPopup("<b>South Korea</b><br><a href='asia.html'>View Recipes</a>");
+
   </script>
 </html>
