@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Biryani Recipe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container mt-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+      <img src="images/biryani.jpg" class="card-img-top" alt="Biryani">
+      <div class="card-body">
+        <h2 class="card-title text-center">Biryani</h2>
+        <p class="text-muted text-center">Indian Dish 🇮🇳</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Basmati rice</li>
+          <li>Chicken or lamb</li>
+          <li>Yogurt</li>
+          <li>Onions</li>
+          <li>Spices</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>Marinate meat, layer with rice and cook with steam for deep flavor.</p>
+        <a href="Asia.html" class="btn btn-secondary mt-3">← Back to Asian Recipes</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+</body>
+</html>
