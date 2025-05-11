@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Navbar CSS -->
+  <style>
+    .navbar {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #0d6efd;
+    }
+
+    #map {
+      height: 500px;
+      margin-top: 40px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <a class="navbar-brand" href="index.html">GLOBAL BITES</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="recipes.html">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="addRecipes.html">Add Recipes</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto" id="authButtons">
+        <li class="nav-item">
+          <button id="loginBtn" class="btn btn-outline-primary">Login</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ✅ Main Buttons -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Around the World!</h2>
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <a href="middleast.html" class="btn btn-outline-dark w-100 p-4">Middle East</a>
+      </div>
+      <div class="col-md-3 mb-4">
+        <a href="europe.html" class="btn btn-outline-dark w-100 p-4">Europe</a>
+      </div>
+      <div class="col-md-3 mb-4">
+        <a href="asia.html" class="btn btn-outline-dark w-100 p-4">Asia</a>
+      </div>
+      <div class="col-md-3 mb-4">
+        <a href="south-america.html" class="btn btn-outline-dark w-100 p-4">South America</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Map Section -->
+  <div class="container">
+    <div id="map"></div>
+  </div>
+
+  <!-- ✅ Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([20, 0], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const markers = [
+      { coords: [23.8859, 45.0792], name: "Saudi Arabia", link: "middleast.html" },
+      { coords: [33.8547, 35.8623], name: "Lebanon", link: "middleast.html" },
+      { coords: [46.6034, 1.8883], name: "France", link: "europe.html" },
+      { coords: [41.8719, 12.5674], name: "Italy", link: "europe.html" },
+      { coords: [23.6345, -102.5528], name: "Mexico", link: "south-america.html" },
+      { coords: [26.8206, 30.8025], name: "Egypt", link: "middleast.html" },
+      { coords: [-14.2350, -51.9253], name: "Brazil", link: "south-america.html" },
+      { coords: [4.5709, -74.2973], name: "Colombia", link: "south-america.html" },
+      { coords: [21.5218, -77.7812], name: "Cuba", link: "south-america.html" },
+      { coords: [23.4241, 53.8478], name: "UAE", link: "middleast.html" },
+      { coords: [31.9522, 35.2332], name: "Palestine", link: "middleast.html" },
+      { coords: [33.2232, 43.6793], name: "Iraq", link: "middleast.html" },
+      { coords: [38.9637, 35.2433], name: "Turkey", link: "europe.html" },
+      { coords: [40.4637, -3.7492], name: "Spain", link: "europe.html" },
+      { coords: [36.2048, 138.2529], name: "Japan", link: "asia.html" },
+      { coords: [15.8700, 100.9925], name: "Thailand", link: "asia.html" },
+      { coords: [35.8617, 104.1954], name: "China", link: "asia.html" },
+      { coords: [20.5937, 78.9629], name: "India", link: "asia.html" },
+      { coords: [61.5240, 105.3188], name: "Russia", link: "asia.html" },
+      { coords: [35.9078, 127.7669], name: "South Korea", link: "asia.html" }
+    ];
+
+    markers.forEach(m => {
+      L.marker(m.coords).addTo(map).bindPopup(`<b>${m.name}</b><br><a href='${m.link}'>View Recipes</a>`);
+    });
+  </script>
+</body>
+</html>
