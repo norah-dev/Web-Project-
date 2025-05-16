@@ -3,105 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kimchi Recipe</title>
+  <title>Korean Recipes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Navbar CSS -->
-  <style>
-    .navbar {
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-brand {
-      font-size: 1.5rem;
-      color: #2c3e50;
-      font-weight: bold;
-    }
-
-    .nav-link {
-      font-weight: 500;
-    }
-
-    .nav-link:hover {
-      color: #0d6efd;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"> <!-- الربط بملف CSS الموحد -->
 </head>
-
 <body>
+
   <!-- ✅ Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-    <a class="navbar-brand" href="index.html">GLOBAL BITES</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div id="navbar"></div>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="recipes.html">Favorites</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="addRecipes.html">Add Recipes</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto" id="authButtons">
-        <li class="nav-item">
-          <button id="loginBtn" class="btn btn-outline-primary">Login</button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- ✅ Recipe Content -->
+  <!-- ✅ Korean Recipes -->
   <div class="container mt-5">
-    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
-      <img src="images/kimchi.jpg" class="card-img-top" alt="Kimchi">
-      <div class="card-body">
-        <h2 class="card-title text-center">Kimchi</h2>
-        <p class="text-muted text-center">Korean Dish 🇰🇷</p>
-        <h5>🧂 Ingredients:</h5>
-        <ul>
-          <li>Cabbage</li>
-          <li>Chili powder</li>
-          <li>Garlic</li>
-          <li>Ginger</li>
-          <li>Salted fish</li>
-        </ul>
-        <h5>👨‍🍳 Preparation:</h5>
-        <p>Ferment spiced cabbage in a jar for a few days to develop flavor.</p>
-        <a href="asia.html" class="btn btn-secondary mt-3">← Back to Asian Recipes</a>
+    <h1 class="text-center mb-4">Korean Recipes 🇰🇷</h1>
+
+    <div class="row g-4">
+
+      <!-- 🍲 Kimchi Card -->
+      <div class="col-md-6">
+        <div class="card shadow-lg h-100">
+          <img src="images/kimchi.jpg" class="card-img-top" alt="Kimchi">
+          <div class="card-body">
+            <h2 class="card-title text-center">Kimchi</h2>
+            <p class="text-muted text-center">Korean Dish 🇰🇷</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Cabbage</li>
+              <li>Chili powder</li>
+              <li>Garlic</li>
+              <li>Ginger</li>
+              <li>Salted fish</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Ferment spiced cabbage in a jar for a few days to develop flavor.</p>
+          </div>
+        </div>
       </div>
+
+      <!-- 🍛 Bibimbap Card -->
+      <div class="col-md-6">
+        <div class="card shadow-lg h-100">
+          <img src="images/bibimbap.jpg" class="card-img-top" alt="Bibimbap">
+          <div class="card-body">
+            <h2 class="card-title text-center">Bibimbap</h2>
+            <p class="text-muted text-center">Korean Dish 🇰🇷</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Rice</li>
+              <li>Vegetables (carrot, spinach, mushrooms, etc.)</li>
+              <li>Egg</li>
+              <li>Gochujang (Korean chili paste)</li>
+              <li>Beef (optional)</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Arrange cooked vegetables and beef over rice, top with a fried egg and gochujang sauce.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="asia.html" class="btn btn-secondary">← Back to Asian Recipes</a>
     </div>
   </div>
 
-  
-  <!-- 🔹 Bibimbap Card (New Recipe) -->
-  <div class="card shadow-lg mx-auto" style="max-width: 600px;">
-    <img src="images/bibimbap.jpg" class="card-img-top" alt="Bibimbap">
-    <div class="card-body">
-      <h2 class="card-title text-center">Bibimbap</h2>
-      <p class="text-muted text-center">Korean Dish 🇰🇷</p>
-      <h5>🧂 Ingredients:</h5>
-      <ul>
-        <li>Rice</li>
-        <li>Vegetables (carrot, spinach, mushrooms, etc.)</li>
-        <li>Egg</li>
-        <li>Gochujang (Korean chili paste)</li>
-        <li>Beef (optional)</li>
-      </ul>
-      <h5>👨‍🍳 Preparation:</h5>
-      <p>Arrange cooked vegetables and beef over rice, top with a fried egg and gochujang sauce.</p>
-      <a href="asia.html" class="btn btn-secondary mt-3">← Back to Asian Recipes</a>
-    </div>
-  </div>
-</div>
-  
   <!-- ✅ Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
 </body>
 </html>
 
