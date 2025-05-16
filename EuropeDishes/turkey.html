@@ -32,3 +32,49 @@
         <h5>👨‍🍳 Preparation:</h5>
         <p>
           Mix meat with spices and herbs.  
+          Shape onto skewers and grill until cooked through.  
+          Serve with rice, salad, or pita bread.
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ Baklava Card -->
+    <div class="card shadow-lg mx-auto mb-5" style="max-width: 600px;">
+      <img src="/images/baklava.jpg" class="card-img-top" alt="Baklava">
+      <div class="card-body">
+        <h2 class="card-title text-center">Baklava</h2>
+        <p class="text-muted text-center">Turkish Dessert 🇹🇷</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Phyllo dough</li>
+          <li>Chopped nuts (pistachios or walnuts)</li>
+          <li>Butter</li>
+          <li>Honey or sugar syrup</li>
+          <li>Cinnamon (optional)</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>
+          Layer phyllo sheets with butter and nuts.  
+          Bake until golden, then pour syrup over while hot.  
+          Let it absorb and serve once cooled.
+        </p>
+      </div>
+    </div>
+
+    <!-- 🔙 Back Button -->
+    <div class="text-center">
+      <a href="/Home.page/Europe.html" class="btn btn-secondary">← Back to European Recipes</a>
+    </div>
+  </div>
+
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+</body>
+
+</html>
+ 
