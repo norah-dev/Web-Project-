@@ -2,37 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>South American Recipes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="style.css"> <!-- هذا هو الربط الموحد -->
 </head>
 <body>
-    <div id="navbar"></div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  </nav>
+  <div id="navbar"></div>
 
   <div class="container mt-5">
-    <h1 class="text-center mb-4">South American Recipes</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/empanadas.jpg" class="card-img-top" alt="Empanadas">
-          <div class="card-body">
-            <h5 class="card-title">Empanadas</h5>
-            <p class="card-text">Savory stuffed pastries popular across South America.</p>
+    <h2 class="text-center mb-4">🌎 South American Recipes</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <!-- Mexico -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/tacos.jpg" class="card-img-top" alt="Tacos">
+          <div class="card-body text-center">
+            <h5 class="card-title">Mexico 🇲🇽</h5>
+            <a href="mexico.html" class="btn btn-primary">View Recipe</a>
           </div>
         </div>
       </div>
+
+      <!-- Brazil -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/feijoada.jpg" class="card-img-top" alt="Feijoada">
+          <div class="card-body text-center">
+            <h5 class="card-title">Brazil 🇧🇷</h5>
+            <a href="brazil.html" class="btn btn-primary">View Recipe</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colombia -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/arepas.jpg" class="card-img-top" alt="Arepas">
+          <div class="card-body text-center">
+            <h5 class="card-title">Colombia 🇨🇴</h5>
+            <a href="colombia.html" class="btn btn-primary">View Recipe</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuba -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/ropa-vieja.jpg" class="card-img-top" alt="Ropa Vieja">
+          <div class="card-body text-center">
+            <h5 class="card-title">Cuba 🇨🇺</h5>
+            <a href="cuba.html" class="btn btn-primary">View Recipe</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <a href="index.html" class="btn btn-secondary mt-4">← Back to Home</a>
   </div>
 
   <script>
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-      });
+    fetch('../Home.page/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
   </script>
 </body>
 </html>
