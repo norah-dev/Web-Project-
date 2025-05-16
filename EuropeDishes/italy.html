@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Italian Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- ربط CSS الموحد -->
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">🇮🇹 Italian Recipes</h1>
+
+    <!-- ✅ Lasagna Card -->
+    <div class="card shadow-lg mx-auto mb-5" style="max-width: 600px;">
+      <img src="/images/lasagna.jpg" class="card-img-top" alt="Lasagna">
+      <div class="card-body">
+        <h2 class="card-title text-center">Lasagna</h2>
+        <p class="text-muted text-center">Italian Dish 🇮🇹</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Lasagna pasta sheets</li>
+          <li>Ground beef</li>
+          <li>Tomato sauce</li>
+          <li>Ricotta cheese</li>
+          <li>Mozzarella cheese</li>
+          <li>Parmesan cheese</li>
+          <li>Onion, garlic, herbs</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>
+          Cook ground beef with onions and tomato sauce.  
+          Layer pasta sheets with meat, ricotta, and cheese.  
+          Repeat layers, top with mozzarella and parmesan.  
+          Bake until golden and bubbly.
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ Pizza Card -->
+    <div class="card shadow-lg mx-auto mb-5" style="max-width: 600px;">
+      <img src="/images/pizza.jpg" class="card-img-top" alt="Pizza">
+      <div class="card-body">
+        <h2 class="card-title text-center">Pizza</h2>
+        <p class="text-muted text-center">Italian Dish 🇮🇹</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Pizza dough</li>
+          <li>Tomato sauce</li>
+          <li>Mozzarella cheese</li>
+          <li>Fresh basil</li>
+          <li>Olive oil</li>
+          <li>Optional toppings (pepperoni, veggies, etc.)</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>
+          Spread tomato sauce over rolled dough.  
+          Add mozzarella and desired toppings.  
+          Bake in a hot oven until crust is crisp and cheese is melted.  
+          Top with fresh basil and a drizzle of olive oil.
+        </p>
+      </div>
+    </div>
+
+    <!-- 🔙 Back Button -->
+    <div class="text-center">
+      <a href="/Home.page/Europe.html" class="btn btn-secondary">← Back to European Recipes</a>
+    </div>
+  </div>
+
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+</body>
+
+</html>
