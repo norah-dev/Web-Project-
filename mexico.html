@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mexican Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="container mt-5">
+    <div class="row g-4 justify-content-center">
+      
+      <!-- 🔹 Tacos Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg h-100">
+          <img src="images/tacos.jpg" class="card-img-top" alt="Tacos">
+          <div class="card-body">
+            <h2 class="card-title text-center">Tacos</h2>
+            <p class="text-muted text-center">Mexican Dish 🇲🇽</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Tortillas</li>
+              <li>Beef or chicken</li>
+              <li>Lettuce</li>
+              <li>Cheese</li>
+              <li>Salsa</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Cook meat with spices, fill tortillas with meat and toppings, and serve warm.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔹 Enchiladas Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg h-100">
+          <img src="images/enchiladas.jpg" class="card-img-top" alt="Enchiladas">
+          <div class="card-body">
+            <h2 class="card-title text-center">Enchiladas</h2>
+            <p class="text-muted text-center">Mexican Dish 🇲🇽</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Corn tortillas</li>
+              <li>Chicken or beef</li>
+              <li>Enchilada sauce</li>
+              <li>Cheese</li>
+              <li>Onions</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Fill tortillas with meat, roll, cover with sauce and cheese, and bake until bubbly.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 🔙 Back Button -->
+    <div class="text-center mt-4">
+      <a href="SouthAmerica.html" class="btn btn-secondary">← Back to South American Recipes</a>
+    </div>
+  </div>
+
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+</body>
+</html>
