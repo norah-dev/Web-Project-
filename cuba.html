@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cuban Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="container mt-5">
+    <div class="row g-4 justify-content-center">
+      
+      <!-- 🔹 Ropa Vieja Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg h-100">
+          <img src="images/ropa-vieja.jpg" class="card-img-top" alt="Ropa Vieja">
+          <div class="card-body">
+            <h2 class="card-title text-center">Ropa Vieja</h2>
+            <p class="text-muted text-center">Cuban Dish 🇨🇺</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Shredded beef</li>
+              <li>Tomatoes</li>
+              <li>Bell peppers</li>
+              <li>Onions</li>
+              <li>Spices</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Simmer shredded beef with tomato sauce and vegetables until tender and rich.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔹 Tostones Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg h-100">
+          <img src="images/tostones.jpg" class="card-img-top" alt="Tostones">
+          <div class="card-body">
+            <h2 class="card-title text-center">Tostones</h2>
+            <p class="text-muted text-center">Cuban Dish 🇨🇺</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Green plantains</li>
+              <li>Salt</li>
+              <li>Oil for frying</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Slice and fry plantains, flatten, then fry again until golden and crispy.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 🔙 Back button -->
+    <div class="text-center mt-4">
+      <a href="SouthAmerica.html" class="btn btn-secondary">← Back to South American Recipes</a>
+    </div>
+  </div>
+
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+</body>
+</html>
