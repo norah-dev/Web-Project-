@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thailand Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- هذا هو الربط الموحد -->
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="container mt-5">
+
+    <!-- ✅ Pad Thai Card -->
+    <div class="card shadow-lg mx-auto mb-5" style="max-width: 600px;">
+      <img src="images/padthai.jpg" class="card-img-top" alt="Pad Thai">
+      <div class="card-body">
+        <h2 class="card-title text-center">Pad Thai</h2>
+        <p class="text-muted text-center">Thai Dish 🇹🇭</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Rice noodles</li>
+          <li>Tofu or shrimp</li>
+          <li>Egg</li>
+          <li>Peanuts</li>
+          <li>Tamarind sauce</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>Stir-fry noodles with sauce and ingredients, garnish with peanuts.</p>
+      </div>
+    </div>
+
+    <!-- ✅ Tom Yum Soup Card -->
+    <div class="card shadow-lg mx-auto mb-5" style="max-width: 600px;">
+      <img src="images/tomyum.jpg" class="card-img-top" alt="Tom Yum Soup">
+      <div class="card-body">
+        <h2 class="card-title text-center">Tom Yum Soup</h2>
+        <p class="text-muted text-center">Thai Dish 🇹🇭</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Shrimp</li>
+          <li>Lemongrass</li>
+          <li>Kaffir lime leaves</li>
+          <li>Galangal</li>
+          <li>Chili</li>
+          <li>Mushrooms</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>Boil shrimp with herbs and spices to make a spicy and sour soup.</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="Asia.html" class="btn btn-secondary">← Back to Asian Recipes</a>
+    </div>
+  </div>
+
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+</body>
+</html>
