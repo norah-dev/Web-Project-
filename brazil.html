@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Brazilian Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- 🔹 Navbar loaded from external file -->
+  <div id="navbar"></div>
+
+  <div class="container mt-5">
+    <!-- 🔸 Feijoada Recipe -->
+    <div class="card shadow-lg mx-auto mb-4" style="max-width: 600px;">
+      <img src="images/feijoada.jpg" class="card-img-top" alt="Feijoada">
+      <div class="card-body">
+        <h2 class="card-title text-center">Feijoada</h2>
+        <p class="text-muted text-center">Brazilian Dish 🇧🇷</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Black beans</li>
+          <li>Pork</li>
+          <li>Sausage</li>
+          <li>Garlic</li>
+          <li>Onions</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>Cook beans with meats and seasonings slowly until thick and flavorful.</p>
+      </div>
+    </div>
+
+    <!-- 🔸 Pão de Queijo Recipe -->
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+      <img src="images/pao_de_queijo.jpg" class="card-img-top" alt="Pão de Queijo">
+      <div class="card-body">
+        <h2 class="card-title text-center">Pão de Queijo</h2>
+        <p class="text-muted text-center">Brazilian Snack 🇧🇷</p>
+        <h5>🧂 Ingredients:</h5>
+        <ul>
+          <li>Tapioca flour</li>
+          <li>Milk</li>
+          <li>Eggs</li>
+          <li>Oil</li>
+          <li>Grated cheese (Parmesan or mozzarella)</li>
+        </ul>
+        <h5>👨‍🍳 Preparation:</h5>
+        <p>Mix ingredients to form a dough, shape into small balls, and bake until golden and puffed.</p>
+      </div>
+    </div>
+
+    <!-- 🔙 Back button -->
+    <div class="text-center mt-4">
+      <a href="SouthAmerica.html" class="btn btn-secondary">← Back to South American Recipes</a>
+    </div>
+  </div>
+
+  <!-- 🔹 Load Navbar Script -->
+  <script>
+    fetch('../Home.page/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+</body>
+</html>
