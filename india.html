@@ -2,31 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Biryani Recipe</title>
+  <title>Indian Recipes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- هذا هو الربط الموحد -->
 </head>
 <body>
   <div id="navbar"></div>
+
   <div class="container mt-5">
-    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
-      <img src="images/biryani.jpg" class="card-img-top" alt="Biryani">
-      <div class="card-body">
-        <h2 class="card-title text-center">Biryani</h2>
-        <p class="text-muted text-center">Indian Dish 🇮🇳</p>
-        <h5>🧂 Ingredients:</h5>
-        <ul>
-          <li>Basmati rice</li>
-          <li>Chicken or lamb</li>
-          <li>Yogurt</li>
-          <li>Onions</li>
-          <li>Spices</li>
-        </ul>
-        <h5>👨‍🍳 Preparation:</h5>
-        <p>Marinate meat, layer with rice and cook with steam for deep flavor.</p>
-        <a href="Asia.html" class="btn btn-secondary mt-3">← Back to Asian Recipes</a>
+    <div class="row justify-content-center g-4">
+      <!-- ✅ Biryani Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg">
+          <img src="images/biryani.jpg" class="card-img-top" alt="Biryani">
+          <div class="card-body">
+            <h2 class="card-title text-center">Biryani</h2>
+            <p class="text-muted text-center">Indian Dish 🇮🇳</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Basmati rice</li>
+              <li>Chicken or lamb</li>
+              <li>Yogurt</li>
+              <li>Onions</li>
+              <li>Spices</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Marinate meat, layer with rice and cook with steam for deep flavor.</p>
+            <a href="Asia.html" class="btn btn-secondary mt-3">← Back to Asian Recipes</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ Butter Chicken Card -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg">
+          <img src="images/butter-chicken.jpg" class="card-img-top" alt="Butter Chicken">
+          <div class="card-body">
+            <h2 class="card-title text-center">Butter Chicken</h2>
+            <p class="text-muted text-center">Indian Dish 🇮🇳</p>
+            <h5>🧂 Ingredients:</h5>
+            <ul>
+              <li>Chicken</li>
+              <li>Tomato sauce</li>
+              <li>Cream</li>
+              <li>Butter</li>
+              <li>Spices (garam masala, turmeric)</li>
+            </ul>
+            <h5>👨‍🍳 Preparation:</h5>
+            <p>Cook chicken in tomato-butter sauce until tender and creamy.</p>
+            <a href="Asia.html" class="btn btn-secondary mt-3">← Back to Asian Recipes</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <script>
     fetch('../Home.page/navbar.html')
       .then(res => res.text())
