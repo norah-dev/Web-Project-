@@ -2,208 +2,138 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Europe Recipes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Europe Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="navbar"></div>
+  <div id="navbar"></div>
 
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">European Recipes</h1>
-        <div class="row">
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">European Recipes</h1>
+    <div class="row">
 
-            <!-- Turkey Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <img src="/images/turkey.avif" class="card-img-top" alt="Turkey">
-                    <div class="card-body">
-                        <h5 class="card-title">Turkey</h5>
-                        <button class="btn btn-primary" onclick="toggleDishes(this)">Show Dishes</button>
-                        <div class="dish-details row mt-2" style="display: none;">
-                            <!-- Mantı Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/TurkeyDishes/Manti.html">
-                                        <img src="/images/manti.jpg" class="card-img-top" alt="Mantı">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/TurkeyDishes/Manti.html"
-                                                class="text-decoration-none text-dark">Mantı</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Menemen Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/TurkeyDishes/Menemen.html">
-                                        <img src="/images/menemen.jpg" class="card-img-top" alt="Menemen">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/TurkeyDishes/Menemen.html"
-                                                class="text-decoration-none text-dark">Menemen</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Spain Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <img src="/images/spain.jpg" class="card-img-top" alt="Spain">
-                    <div class="card-body">
-                        <h5 class="card-title">Spain</h5>
-                        <button class="btn btn-primary" onclick="toggleDishes(this)">Show Dishes</button>
-                        <div class="dish-details row mt-2" style="display: none;">
-                            <!-- Paella Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/SpainDishes/Paella.html">
-                                        <img src="/images/Paella.webp" class="card-img-top" alt="Paella">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/SpainDishes/Paella.html"
-                                                class="text-decoration-none text-dark">Paella</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Tortilla Española Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/SpainDishes/Tortilla.html">
-                                        <img src="/images/TortillaEspanola.jpeg" class="card-img-top" alt="Tortilla Española">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/SpainDishes/Tortilla.html"
-                                                class="text-decoration-none text-dark">Tortilla Española</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Italy Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <img src="/images/italy.jpg" class="card-img-top" alt="Italy">
-                    <div class="card-body">
-                        <h5 class="card-title">Italy</h5>
-                        <button class="btn btn-primary" onclick="toggleDishes(this)">Show Dishes</button>
-                        <div class="dish-details row mt-2" style="display: none;">
-                            <!-- Margherita Pizza Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/ItalyDishes/Pizza.html">
-                                        <img src="/images/pizza.jpg" class="card-img-top" alt="Margherita Pizza">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/ItalyDishes/Pizza.html"
-                                                class="text-decoration-none text-dark">Margherita Pizza</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Lasagna Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/ItalyDishes/Lasagna.html">
-                                        <img src="/images/lasagna.webp" class="card-img-top" alt="Lasagna">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/ItalyDishes/Lasagna.html"
-                                                class="text-decoration-none text-dark">Lasagna</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- France Card -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <img src="/images/france.webp" class="card-img-top" alt="France">
-                    <div class="card-body">
-                        <h5 class="card-title">France</h5>
-                        <button class="btn btn-primary" onclick="toggleDishes(this)">Show Dishes</button>
-                        <div class="dish-details row mt-2" style="display: none;">
-                            <!-- Croissant Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/FranceDishes/Croissant.html">
-                                        <img src="/images/croissant.png" class="card-img-top" alt="Croissant">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/FranceDishes/Croissant.html"
-                                                class="text-decoration-none text-dark">Croissant</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Ratatouille Card -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card h-100">
-                                    <a href="../EuropeDishes/FranceDishes/Ratatouille.html">
-                                        <img src="/images/ratatouille.jpeg" class="card-img-top" alt="Ratatouille">
-                                    </a>
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            <a href="../EuropeDishes/FranceDishes/Ratatouille.html"
-                                                class="text-decoration-none text-dark">Ratatouille</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+      <!-- Turkey Dishes -->
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/TurkeyDishes/Manti.html">
+            <img src="/images/manti.jpg" class="card-img-top" alt="Mantı">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/TurkeyDishes/Manti.html" class="text-decoration-none text-dark">Mantı - Turkey</a>
+            </h5>
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/TurkeyDishes/Menemen.html">
+            <img src="/images/menemen.jpg" class="card-img-top" alt="Menemen">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/TurkeyDishes/Menemen.html" class="text-decoration-none text-dark">Menemen - Turkey</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spain Dishes -->
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/SpainDishes/Paella.html">
+            <img src="/images/Paella.webp" class="card-img-top" alt="Paella">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/SpainDishes/Paella.html" class="text-decoration-none text-dark">Paella - Spain</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/SpainDishes/Tortilla.html">
+            <img src="/images/TortillaEspanola.jpeg" class="card-img-top" alt="Tortilla Española">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/SpainDishes/Tortilla.html" class="text-decoration-none text-dark">Tortilla Española - Spain</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Italy Dishes -->
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/ItalyDishes/Pizza.html">
+            <img src="/images/pizza.jpg" class="card-img-top" alt="Margherita Pizza">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/ItalyDishes/Pizza.html" class="text-decoration-none text-dark">Margherita Pizza - Italy</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/ItalyDishes/Lasagna.html">
+            <img src="/images/lasagna.webp" class="card-img-top" alt="Lasagna">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/ItalyDishes/Lasagna.html" class="text-decoration-none text-dark">Lasagna - Italy</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- France Dishes -->
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/FranceDishes/Croissant.html">
+            <img src="/images/croissant.png" class="card-img-top" alt="Croissant">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/FranceDishes/Croissant.html" class="text-decoration-none text-dark">Croissant - France</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="../EuropeDishes/FranceDishes/Ratatouille.html">
+            <img src="/images/ratatouille.jpeg" class="card-img-top" alt="Ratatouille">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <a href="../EuropeDishes/FranceDishes/Ratatouille.html" class="text-decoration-none text-dark">Ratatouille - France</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
-
-        function toggleDishes(button) {
-            const details = button.nextElementSibling;
-            if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
-                button.textContent = "Hide Dishes";
-            } else {
-                details.style.display = "none";
-                button.textContent = "Show Dishes";
-            }
-        }
-    </script>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>
+
