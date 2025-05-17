@@ -1,139 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Middle East Recipes</title>
+  <meta charset="UTF-8">
+  <title>Middle East Recipes - GLOBAL BITES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      background-color: #fff1f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 50px auto;
+    }
+
+    .country-heading {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+
+    .dish-box {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .recipe img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-orange {
+      background-color: #ff8800;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .btn-orange:hover {
+      background-color: #e67300;
+    }
+
+    .btn-fav.active {
+      background-color: #ffdddd !important;
+      color: red;
+    }
+
+    .btn-fav {
+      background-color: #f0f0f0 !important;
+      color: black;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-home {
+      color: #ff8800;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .recipe-details {
+      display: none;
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .recipe-details ul {
+      padding-left: 20px;
+    }
+
+    .favorite-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+      display: none;
+    }
+
+    h2 {
+      font-weight: bold;
+      color: #e85a4f;
+    }
+  </style>
 </head>
+<body class="animate__animated animate__fadeIn">
 
-<body>
-  <div id="navbar"></div>
+  <nav class="animate__animated animate__fadeInDown animate__delay-1s">
+    <a href="index.html" class="nav-home">← Back to Home</a>
+  </nav>
 
-  <div class="container mt-5">
-    <h1 class="text-center mb-4">Middle Eastern Recipes</h1>
-    <div class="row">
+  <div class="section animate__animated animate__fadeInUp animate__delay-1s">
+    <h2 class="text-center mb-5"><strong>Middle Eastern Dishes</strong></h2>
 
-      <!-- Saudi Dishes -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Saudi.dishes/kabsa.html">
-            <img src="/images/kabsa.jpg" class="card-img-top" alt="Kabsa">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Saudi.dishes/kabsa.html" class="text-decoration-none text-dark">Kabsa - Saudi Arabia</a>
-            </h5>
+    <!-- Saudi Arabia -->
+    <div class="country-heading">🇸🇦 Saudi Arabia</div>
+    <div class="row g-4">
+      <!-- Kabsa -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🥘 Kabsa</h5>
+          <img src="images/Kabsa.jpg" alt="Kabsa">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('kabsa')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Kabsa', 'Basmati rice, chicken or lamb, tomatoes, onions, garlic, kabsa spices', 'Sauté onions and garlic, add meat and tomatoes, cook with spices, then add rice and simmer.', 'images/Kabsa.jpg')">❤️</button>
+          </div>
+          <div id="kabsa" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Basmati rice</li>
+              <li>Chicken or lamb</li>
+              <li>Tomatoes</li>
+              <li>Onions</li>
+              <li>Garlic</li>
+              <li>Kabsa spices</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Sauté onions and garlic, add meat and tomatoes, cook with spices, then add rice and simmer.</p>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Saudi.dishes/jareesh.html">
-            <img src="/images/jareesh.webp" class="card-img-top" alt="Jareesh">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Saudi.dishes/jareesh.html" class="text-decoration-none text-dark">Jareesh - Saudi Arabia</a>
-            </h5>
+      <!-- Jareesh -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍲 Jareesh</h5>
+          <img src="images/jareesh.jpg" alt="Jareesh">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('jareesh')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Jareesh', 'Crushed wheat, yogurt, onion, chicken, spices', 'Cook wheat in broth, add yogurt, stir with chicken until thick and creamy.', 'images/jareesh.jpg')">❤️</button>
+          </div>
+          <div id="jareesh" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Crushed wheat</li>
+              <li>Yogurt</li>
+              <li>Onion</li>
+              <li>Chicken</li>
+              <li>Spices</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Cook wheat in broth, add yogurt, stir with chicken until thick and creamy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lebanon -->
+    <div class="country-heading">🇱🇧 Lebanon</div>
+    <div class="row g-4">
+      <!-- Tabbouleh -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🥗 Tabbouleh</h5>
+          <img src="images/tabbouleh.jpg" alt="Tabbouleh">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('tabbouleh')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Tabbouleh', 'Parsley, mint, tomatoes, bulgur, lemon juice, olive oil', 'Finely chop all ingredients and mix with lemon and olive oil dressing.', 'images/tabbouleh.jpg')">❤️</button>
+          </div>
+          <div id="tabbouleh" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Parsley</li>
+              <li>Mint</li>
+              <li>Tomatoes</li>
+              <li>Bulgur</li>
+              <li>Lemon juice</li>
+              <li>Olive oil</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Finely chop all ingredients and mix with lemon and olive oil dressing.</p>
           </div>
         </div>
       </div>
 
-      <!-- Iraq Dishes -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Iraq.dishes/Dolma.html">
-            <img src="/images/Dolma.jpg" class="card-img-top" alt="Dolma">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Iraq.dishes/Dolma.html" class="text-decoration-none text-dark">Dolma - Iraq</a>
-            </h5>
+      <!-- Hummus -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🥣 Hummus</h5>
+          <img src="images/hummus.jpg" alt="Hummus">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('hummus')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Hummus', 'Chickpeas, tahini, garlic, lemon juice, olive oil', 'Blend chickpeas with tahini, lemon and garlic, top with olive oil.', 'images/hummus.jpg')">❤️</button>
+          </div>
+          <div id="hummus" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Chickpeas</li>
+              <li>Tahini</li>
+              <li>Garlic</li>
+              <li>Lemon juice</li>
+              <li>Olive oil</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Blend chickpeas with tahini, lemon and garlic, top with olive oil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palestine -->
+    <div class="country-heading">🇵🇸 Palestine</div>
+    <div class="row g-4">
+      <!-- Musakhan -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍗 Musakhan</h5>
+          <img src="images/Maskhan.jpg" alt="Musakhan">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('musakhan')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Musakhan', 'Chicken, onions, sumac, taboon bread, olive oil', 'Caramelize onions, cook chicken with sumac and oil, layer on flatbread and bake.', 'images/Maskhan.jpg')">❤️</button>
+          </div>
+          <div id="musakhan" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Chicken</li>
+              <li>Onions</li>
+              <li>Sumac</li>
+              <li>Taboon bread</li>
+              <li>Olive oil</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Caramelize onions, cook chicken with sumac and oil, layer on flatbread and bake.</p>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Iraq.dishes/Jalfrai.html">
-            <img src="/images/Jalfrai.jpg" class="card-img-top" alt="Jalfrai">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Iraq.dishes/Jalfrai.html" class="text-decoration-none text-dark">Jalfrai - Iraq</a>
-            </h5>
+      <!-- Mujaddara -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🌾 Mujaddara</h5>
+          <img src="images/mujaddara.jpg" alt="Mujaddara">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('mujaddara')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Mujaddara', 'Lentils, rice, onions, olive oil', 'Boil lentils and rice, top with caramelized onions fried in olive oil.', 'images/mujaddara.jpg')">❤️</button>
+          </div>
+          <div id="mujaddara" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Lentils</li>
+              <li>Rice</li>
+              <li>Onions</li>
+              <li>Olive oil</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Boil lentils and rice, top with caramelized onions fried in olive oil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iraq -->
+    <div class="country-heading">🇮🇶 Iraq</div>
+    <div class="row g-4">
+      <!-- Dolma -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🫒 Dolma</h5>
+          <img src="images/dolma.jpg" alt="Dolma">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('dolma')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Dolma', 'Grape leaves, rice, ground meat, onions, herbs, tomato paste', 'Mix rice with meat, onion, and herbs, wrap in grape leaves, cook in tomato broth.', 'images/dolma.jpg')">❤️</button>
+          </div>
+          <div id="dolma" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Grape leaves</li>
+              <li>Rice</li>
+              <li>Ground meat</li>
+              <li>Onions</li>
+              <li>Herbs</li>
+              <li>Tomato paste</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Mix rice with meat, onion, and herbs, wrap in grape leaves, cook in tomato broth.</p>
           </div>
         </div>
       </div>
 
-      <!-- Lebanon Dishes -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Lebanon.dishes/Tabbouleh.html">
-            <img src="/images/tabbouleh.webp" class="card-img-top" alt="Tabbouleh">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Lebanon.dishes/Tabbouleh.html" class="text-decoration-none text-dark">Tabbouleh - Lebanon</a>
-            </h5>
+      <!-- Kubba -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🧆 Kubba</h5>
+          <img src="images/kubba.jpg" alt="Kubba">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('kubba')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Kubba', 'Bulgur, minced meat, onions, spices', 'Form shell with bulgur paste, stuff with seasoned meat, shape and fry.', 'images/kubba.jpg')">❤️</button>
+          </div>
+          <div id="kubba" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul>
+              <li>Bulgur</li>
+              <li>Minced meat</li>
+              <li>Onions</li>
+              <li>Spices</li>
+            </ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Form shell with bulgur paste, stuff with seasoned meat, shape and fry.</p>
           </div>
         </div>
       </div>
-
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Lebanon.dishes/Hummus.html">
-            <img src="/images/Hummas.jpg" class="card-img-top" alt="Hummus">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Lebanon.dishes/Hummus.html" class="text-decoration-none text-dark">Hummus - Lebanon</a>
-            </h5>
-          </div>
-        </div>
-      </div>
-
-      <!-- Palestine Dishes -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Palestine.dishes/Maskhan.html">
-            <img src="/images/Maskhan.jpg" class="card-img-top" alt="Musakhan">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Palestine.dishes/Maskhan.html" class="text-decoration-none text-dark">Musakhan - Palestine</a>
-            </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <a href="../Palestine.dishes/mujadara.html">
-            <img src="/Images/mujadara.jpg" class="card-img-top" alt="Mujadara">
-          </a>
-          <div class="card-body text-center">
-            <h5 class="card-title">
-              <a href="../Palestine.dishes/mujadara.html" class="text-decoration-none text-dark">Mujadara - Palestine</a>
-            </h5>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
+  <div id="fav-msg" class="favorite-message text-center"></div>
+
   <script>
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+
+    function addToFavorites(button, name, ingredients, preparation, image = "") {
+      let favorites = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const index = favorites.findIndex(d => d.name === name);
+      let message = "";
+
+      if (index === -1) {
+        favorites.push({ name, ingredients, preparation, image });
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.add("active");
+        message = "❤️ Added to favorites!";
+      } else {
+        favorites.splice(index, 1);
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.remove("active");
+        message = "❌ Removed from favorites";
+      }
+
+      showFavoriteMessage(message);
+    }
+
+    function showFavoriteMessage(msg) {
+      let box = document.getElementById("fav-msg");
+      box.innerText = msg;
+      box.style.display = "block";
+      setTimeout(() => {
+        box.style.display = "none";
+      }, 2000);
+    }
+
+    window.onload = function () {
+      const saved = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const buttons = document.querySelectorAll(".btn-fav");
+      buttons.forEach(btn => {
+        const match = btn.getAttribute("onclick").match(/'([^']+)'/);
+        if (match) {
+          const name = match[1];
+          if (saved.find(d => d.name === name)) {
+            btn.classList.add("active");
+          }
+        }
       });
+    };
   </script>
+
 </body>
-
 </html>
-
