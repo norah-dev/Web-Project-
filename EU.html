@@ -1,82 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>European Recipes</title>
+  <meta charset="UTF-8">
+  <title>European Recipes - GLOBAL BITES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- ✅ Navbar CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
-    .navbar {
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    body {
+      background-color: #fff1f0;
+      font-family: Arial, sans-serif;
     }
-
-    .navbar-brand {
-      font-size: 1.5rem;
-      color: #2c3e50;
+    .section {
+      max-width: 1000px;
+      margin: 50px auto;
+    }
+    .country-heading {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+    .dish-box {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      height: 100%;
+    }
+    .recipe img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .btn-orange {
+      background-color: #ff8800;
+      color: white;
+      border-radius: 10px;
       font-weight: bold;
     }
-
-    .nav-link {
-      font-weight: 500;
+    .btn-orange:hover {
+      background-color: #e67300;
     }
-
-    .nav-link:hover {
-      color: #0d6efd;
+    .btn-fav.active {
+      background-color: #ffdddd !important;
+      color: red;
+    }
+    .btn-fav {
+      background-color: #f0f0f0 !important;
+      color: black;
+    }
+    nav {
+      background-color: #ffffff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .nav-home {
+      color: #ff8800;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .recipe-details {
+      display: none;
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .recipe-details ul {
+      padding-left: 20px;
+    }
+    .favorite-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+      display: none;
+    }
+    h2 {
+      font-weight: bold;
+      color: #e85a4f;
     }
   </style>
 </head>
+<body class="animate__animated animate__fadeIn">
 
-<body>
-  <!-- ✅ Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-    <a class="navbar-brand" href="index.html">GLOBAL BITES</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="recipes.html">Favorites</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="addRecipes.html">Add Recipes</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto" id="authButtons">
-        <li class="nav-item">
-          <button id="loginBtn" class="btn btn-outline-primary">Login</button>
-        </li>
-      </ul>
-    </div>
+  <nav class="animate__animated animate__fadeInDown animate__delay-1s">
+    <a href="index.html" class="nav-home">← Back to Home</a>
   </nav>
 
-  <!-- ✅ Page Content -->
-  <div class="container mt-5">
-    <h1 class="text-center mb-4">European Recipes</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/pasta.jpg" class="card-img-top" alt="Pasta">
-          <div class="card-body">
-            <h5 class="card-title">Pasta Carbonara</h5>
-            <p class="card-text">Creamy Italian pasta with eggs, cheese, and pancetta.</p>
+  <div class="section animate__animated animate__fadeInUp animate__delay-1s">
+    <h2 class="text-center mb-5"><strong>European Dishes</strong></h2>
+
+    <!-- France -->
+    <div class="country-heading">🇫🇷 France</div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🥐 Croissant</h5>
+          <img src="images/croissant.jpg" alt="Croissant">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('croissant')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Croissant', 'Flour, butter, yeast, milk, sugar', 'Roll dough with butter into layers, shape into crescents, and bake.', 'images/croissant.jpg')">❤️</button>
+          </div>
+          <div id="croissant" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Flour</li><li>Butter</li><li>Yeast</li><li>Milk</li><li>Sugar</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Roll dough with butter into layers, shape into crescents, and bake.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍲 Ratatouille</h5>
+          <img src="images/ratatouille.jpg" alt="Ratatouille">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('ratatouille')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Ratatouille', 'Eggplant, zucchini, tomatoes, peppers, herbs', 'Slice vegetables and bake or stew with olive oil and spices.', 'images/ratatouille.jpg')">❤️</button>
+          </div>
+          <div id="ratatouille" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Eggplant</li><li>Zucchini</li><li>Tomatoes</li><li>Peppers</li><li>Herbs</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Slice vegetables and bake or stew with olive oil and spices.</p>
           </div>
         </div>
       </div>
     </div>
-    <a href="index.html" class="btn btn-secondary mt-4">← Back to Home</a>
+
+    <!-- Italy -->
+    <div class="country-heading">🇮🇹 Italy</div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍕 Pizza Margherita</h5>
+          <img src="images/pizza.jpg" alt="Pizza">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('pizza')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Pizza Margherita', 'Dough, tomato sauce, mozzarella, basil', 'Top dough with sauce, cheese and basil, then bake until golden.', 'images/pizza.jpg')">❤️</button>
+          </div>
+          <div id="pizza" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Dough</li><li>Tomato sauce</li><li>Mozzarella</li><li>Basil</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Top dough with sauce, cheese and basil, then bake until golden.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍝 Lasagna</h5>
+          <img src="images/lasagna.jpg" alt="Lasagna">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('lasagna')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Lasagna', 'Pasta sheets, minced meat, tomato sauce, béchamel, cheese', 'Layer pasta with sauces and cheese, then bake until bubbling.', 'images/lasagna.jpg')">❤️</button>
+          </div>
+          <div id="lasagna" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Pasta sheets</li><li>Minced meat</li><li>Tomato sauce</li><li>Béchamel</li><li>Cheese</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Layer pasta with sauces and cheese, then bake until bubbling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spain -->
+    <div class="country-heading">🇪🇸 Spain</div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🥘 Paella</h5>
+          <img src="images/paella.jpg" alt="Paella">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('paella')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Paella', 'Rice, saffron, seafood or chicken, vegetables', 'Cook rice with broth, saffron, and toppings in a wide pan.', 'images/paella.jpg')">❤️</button>
+          </div>
+          <div id="paella" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Rice</li><li>Saffron</li><li>Seafood or chicken</li><li>Vegetables</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Cook rice with broth, saffron, and toppings in a wide pan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍳 Spanish Tortilla</h5>
+          <img src="images/tortilla.jpg" alt="Tortilla Española">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('tortilla')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Spanish Tortilla', 'Potatoes, eggs, onions, olive oil', 'Fry potatoes and onions, mix with eggs, and cook in a pan until set.', 'images/tortilla.jpg')">❤️</button>
+          </div>
+          <div id="tortilla" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Potatoes</li><li>Eggs</li><li>Onions</li><li>Olive oil</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Fry potatoes and onions, mix with eggs, and cook in a pan until set.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Turkey -->
+    <div class="country-heading">🇹🇷 Turkey</div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🥙 Kebab</h5>
+          <img src="images/kebab.jpg" alt="Kebab">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('kebab')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Kebab', 'Lamb or beef, onion, garlic, spices', 'Marinate meat with spices, skewer and grill until cooked.', 'images/kebab.jpg')">❤️</button>
+          </div>
+          <div id="kebab" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Lamb or Beef</li><li>Onion</li><li>Garlic</li><li>Spices</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Marinate meat with spices, skewer and grill until cooked.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍰 Baklava</h5>
+          <img src="images/baklava.jpg" alt="Baklava">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('baklava')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Baklava', 'Phyllo dough, nuts, butter, syrup', 'Layer dough with nuts and butter, bake, then soak in syrup.', 'images/baklava.jpg')">❤️</button>
+          </div>
+          <div id="baklava" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Phyllo Dough</li><li>Chopped Nuts</li><li>Butter</li><li>Sugar Syrup</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Layer dough with nuts and butter, bake, then soak in syrup.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- ✅ Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <div id="fav-msg" class="favorite-message text-center"></div>
 
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+
+    function addToFavorites(button, name, ingredients, preparation, image = "") {
+      let favorites = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const index = favorites.findIndex(d => d.name === name);
+      let message = "";
+
+      if (index === -1) {
+        favorites.push({ name, ingredients, preparation, image });
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.add("active");
+        message = "❤️ Added to favorites!";
+      } else {
+        favorites.splice(index, 1);
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.remove("active");
+        message = "❌ Removed from favorites";
+      }
+
+      showFavoriteMessage(message);
+    }
+
+    function showFavoriteMessage(msg) {
+      let box = document.getElementById("fav-msg");
+      box.innerText = msg;
+      box.style.display = "block";
+      setTimeout(() => {
+        box.style.display = "none";
+      }, 2000);
+    }
+
+    window.onload = function () {
+      const saved = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const buttons = document.querySelectorAll(".btn-fav");
+      buttons.forEach(btn => {
+        const match = btn.getAttribute("onclick").match(/'([^']+)'/);
+        if (match) {
+          const name = match[1];
+          if (saved.find(d => d.name === name)) {
+            btn.classList.add("active");
+          }
+        }
+      });
+    };
+  </script>
+
+</body>
 </html>
+
 
