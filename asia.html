@@ -1,92 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Asian Recipes</title>
+  <meta charset="UTF-8">
+  <title>Asian Recipes - GLOBAL BITES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> <!-- هذا هو الربط الموحد -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      background-color: #fff1f0;
+      font-family: Arial, sans-serif;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 50px auto;
+    }
+    .country-heading {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+    .dish-box {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .recipe img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .btn-orange {
+      background-color: #ff8800;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .btn-orange:hover {
+      background-color: #e67300;
+    }
+    .btn-fav.active {
+      background-color: #ffdddd !important;
+      color: red;
+    }
+    .btn-fav {
+      background-color: #f0f0f0 !important;
+      color: black;
+    }
+    nav {
+      background-color: #ffffff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .nav-home {
+      color: #ff8800;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .recipe-details {
+      display: none;
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .recipe-details ul {
+      padding-left: 20px;
+    }
+    .favorite-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+      display: none;
+    }
+    h2 {
+      font-weight: bold;
+      color: #e85a4f;
+    }
+  </style>
 </head>
-<body>
-  <div id="navbar"></div>
+<body class="animate__animated animate__fadeIn">
 
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">🌏 Asian Recipes</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <nav class="animate__animated animate__fadeInDown animate__delay-1s">
+    <a href="index.html" class="nav-home">← Back to Home</a>
+  </nav>
 
-      <!-- Japan -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/sushi.jpg" class="card-img-top" alt="Sushi">
-          <div class="card-body text-center">
-            <h5 class="card-title">Japan 🇯🇵</h5>
-            <a href="japan.html" class="btn btn-primary">View Recipe</a>
-          </div>
-        </div>
+  <div class="section animate__animated animate__fadeInUp animate__delay-1s">
+    <h2 class="text-center mb-5"><strong>Asian Dishes</strong></h2>
+<!-- Japan -->
+<div class="country-heading">🇯🇵 Japan</div>
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍣 Sushi</h5>
+      <img src="images/sushi.jpg" alt="Sushi">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('sushi')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Sushi', 'Rice, fish, seaweed, vinegar', 'Roll rice and fish in seaweed, serve chilled.', 'images/sushi.jpg')">❤️</button>
       </div>
-
-      <!-- Korea -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/kimchi.jpg" class="card-img-top" alt="Kimchi">
-          <div class="card-body text-center">
-            <h5 class="card-title">Korea 🇰🇷</h5>
-            <a href="korea.html" class="btn btn-primary">View Recipe</a>
-          </div>
-        </div>
+      <div id="sushi" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Rice</li>
+          <li>Fish</li>
+          <li>Seaweed</li>
+          <li>Vinegar</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Roll rice and fish in seaweed, serve chilled.</p>
       </div>
-
-      <!-- India -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/biryani.jpg" class="card-img-top" alt="Biryani">
-          <div class="card-body text-center">
-            <h5 class="card-title">India 🇮🇳</h5>
-            <a href="india.html" class="btn btn-primary">View Recipe</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Thailand -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/padthai.jpg" class="card-img-top" alt="Pad Thai">
-          <div class="card-body text-center">
-            <h5 class="card-title">Thailand 🇹🇭</h5>
-            <a href="thailand.html" class="btn btn-primary">View Recipe</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- China -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/dumplings.jpg" class="card-img-top" alt="Dumplings">
-          <div class="card-body text-center">
-            <h5 class="card-title">China 🇨🇳</h5>
-            <a href="china.html" class="btn btn-primary">View Recipe</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Russia -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/borscht.jpg" class="card-img-top" alt="Borscht">
-          <div class="card-body text-center">
-            <h5 class="card-title">Russia 🇷🇺</h5>
-            <a href="russia.html" class="btn btn-primary">View Recipe</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍜 Ramen</h5>
+      <img src="images/ramen.jpg" alt="Ramen">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('ramen')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Ramen', 'Noodles, broth, boiled egg, sliced pork, green onions', 'Cook noodles in broth, add toppings like egg and pork.', 'images/ramen.jpg')">❤️</button>
+      </div>
+      <div id="ramen" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Noodles</li>
+          <li>Broth</li>
+          <li>Boiled egg</li>
+          <li>Sliced pork</li>
+          <li>Green onions</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Cook noodles in broth, add toppings like egg and pork.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Korea -->
+<div class="country-heading">🇰🇷 Korea</div>
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍚 Bibimbap</h5>
+      <img src="images/bibimbap.jpg" alt="Bibimbap">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('bibimbap')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Bibimbap', 'Rice, assorted vegetables, egg, gochujang (chili paste), beef', 'Place rice in bowl, top with vegetables, beef, egg, and chili paste.', 'images/bibimbap.jpg')">❤️</button>
+      </div>
+      <div id="bibimbap" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Rice</li>
+          <li>Assorted vegetables</li>
+          <li>Egg</li>
+          <li>Gochujang (chili paste)</li>
+          <li>Beef</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Place rice in bowl, top with vegetables, beef, egg, and chili paste.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🥬 Kimchi</h5>
+      <img src="images/kimchi.jpg" alt="Kimchi">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('kimchi')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Kimchi', 'Napa cabbage, Korean chili powder, garlic, ginger, fish sauce', 'Ferment cabbage with spices and seasonings for several days.', 'images/kimchi.jpg')">❤️</button>
+      </div>
+      <div id="kimchi" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Napa cabbage</li>
+          <li>Korean chili powder</li>
+          <li>Garlic</li>
+          <li>Ginger</li>
+          <li>Fish sauce</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Ferment cabbage with spices and seasonings for several days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- China -->
+<div class="country-heading">🇨🇳 China</div>
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🥟 Dumplings</h5>
+      <img src="images/dumplings.jpg" alt="Dumplings">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('dumplings')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Dumplings', 'Flour, meat or vegetables, soy sauce, garlic', 'Wrap filling in dough, steam or fry.', 'images/dumplings.jpg')">❤️</button>
+      </div>
+      <div id="dumplings" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Flour</li>
+          <li>Meat or vegetables</li>
+          <li>Soy sauce</li>
+          <li>Garlic</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Wrap filling in dough, steam or fry.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍗 Sweet and Sour Chicken</h5>
+      <img src="images/sweetandsour.jpg" alt="Sweet and Sour Chicken">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('sweetandsour')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Sweet and Sour Chicken', 'Chicken, bell peppers, pineapple, vinegar, sugar, ketchup', 'Fry chicken, stir with vegetables and sweet-sour sauce.', 'images/sweetandsour.jpg')">❤️</button>
+      </div>
+      <div id="sweetandsour" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Chicken</li>
+          <li>Bell peppers</li>
+          <li>Pineapple</li>
+          <li>Vinegar</li>
+          <li>Sugar</li>
+          <li>Ketchup</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Fry chicken, stir with vegetables and sweet-sour sauce.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Thailand -->
+<div class="country-heading">🇹🇭 Thailand</div>
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍜 Pad Thai</h5>
+      <img src="images/padthai.jpg" alt="Pad Thai">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('padthai')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Pad Thai', 'Rice noodles, shrimp, eggs, peanuts, bean sprouts', 'Stir-fry noodles with shrimp, eggs, and sauce, top with peanuts.', 'images/padthai.jpg')">❤️</button>
+      </div>
+      <div id="padthai" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Rice noodles</li>
+          <li>Shrimp</li>
+          <li>Eggs</li>
+          <li>Peanuts</li>
+          <li>Bean sprouts</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Stir-fry noodles with shrimp, eggs, and sauce, top with peanuts.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍲 Tom Yum Soup</h5>
+      <img src="images/tomyum.jpg" alt="Tom Yum Soup">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('tomyum')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Tom Yum Soup', 'Shrimp, lemongrass, kaffir lime leaves, chili, mushrooms, lime juice', 'Boil broth with herbs and spices, add shrimp and mushrooms, finish with lime juice.', 'images/tomyum.jpg')">❤️</button>
+      </div>
+      <div id="tomyum" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Shrimp</li>
+          <li>Lemongrass</li>
+          <li>Kaffir lime leaves</li>
+          <li>Chili</li>
+          <li>Mushrooms</li>
+          <li>Lime juice</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Boil broth with herbs and spices, add shrimp and mushrooms, finish with lime juice.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Russia -->
+<div class="country-heading">🇷🇺 Russia</div>
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🥣 Borscht</h5>
+      <img src="images/borscht.jpg" alt="Borscht">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('borscht')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Borscht', 'Beets, cabbage, carrots, onions, sour cream', 'Boil vegetables in broth, serve with sour cream.', 'images/borscht.jpg')">❤️</button>
+      </div>
+      <div id="borscht" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul><li>Beets</li><li>Cabbage</li><li>Carrots</li><li>Onions</li><li>Sour cream</li></ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Boil vegetables in broth, serve with sour cream.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🥩 Beef Stroganoff</h5>
+      <img src="images/beef-stroganoff.jpg" alt="Beef Stroganoff">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('stroganoff')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Beef Stroganoff', 'Beef strips, mushrooms, onions, sour cream, mustard', 'Sauté beef with onions and mushrooms, stir in sour cream and mustard.', 'images/beef-stroganoff.jpg')">❤️</button>
+      </div>
+      <div id="stroganoff" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul><li>Beef strips</li><li>Mushrooms</li><li>Onions</li><li>Sour cream</li><li>Mustard</li></ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Sauté beef with onions and mushrooms, stir in sour cream and mustard.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div id="fav-msg" class="favorite-message text-center"></div>
+
   <script>
-    fetch('../Home.page/navbar.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('navbar').innerHTML = data);
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+
+    function addToFavorites(button, name, ingredients, preparation, image = "") {
+      let favorites = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const index = favorites.findIndex(d => d.name === name);
+      let message = "";
+
+      if (index === -1) {
+        favorites.push({ name, ingredients, preparation, image });
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.add("active");
+        message = "❤️ Added to favorites!";
+      } else {
+        favorites.splice(index, 1);
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.remove("active");
+        message = "❌ Removed from favorites";
+      }
+
+      showFavoriteMessage(message);
+    }
+
+    function showFavoriteMessage(msg) {
+      let box = document.getElementById("fav-msg");
+      box.innerText = msg;
+      box.style.display = "block";
+      setTimeout(() => {
+        box.style.display = "none";
+      }, 2000);
+    }
+
+    window.onload = function () {
+      const saved = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const buttons = document.querySelectorAll(".btn-fav");
+      buttons.forEach(btn => {
+        const match = btn.getAttribute("onclick").match(/'([^']+)'/);
+        if (match) {
+          const name = match[1];
+          if (saved.find(d => d.name === name)) {
+            btn.classList.add("active");
+          }
+        }
+      });
+    };
   </script>
+
 </body>
 </html>
-
