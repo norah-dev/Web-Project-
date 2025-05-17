@@ -1,69 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>South American Recipes</title>
+  <meta charset="UTF-8">
+  <title>South American Recipes - GLOBAL BITES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
- <link rel="stylesheet" href="style.css"> <!-- هذا هو الربط الموحد -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      background-color: #fff1f0;
+      font-family: Arial, sans-serif;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 50px auto;
+    }
+    .country-heading {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+    .dish-box {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .recipe img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .btn-orange {
+      background-color: #ff8800;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .btn-orange:hover {
+      background-color: #e67300;
+    }
+    .btn-fav.active {
+      background-color: #ffdddd !important;
+      color: red;
+    }
+    .btn-fav {
+      background-color: #f0f0f0 !important;
+      color: black;
+    }
+    nav {
+      background-color: #ffffff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .nav-home {
+      color: #ff8800;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .recipe-details {
+      display: none;
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .recipe-details ul {
+      padding-left: 20px;
+    }
+    .favorite-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+      display: none;
+    }
+    h2 {
+      font-weight: bold;
+      color: #e85a4f;
+    }
+  </style>
 </head>
-<body>
-  <div id="navbar"></div>
+<body class="animate__animated animate__fadeIn">
 
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">🌎 South American Recipes</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+  <nav class="animate__animated animate__fadeInDown animate__delay-1s">
+    <a href="index.html" class="nav-home">← Back to Home</a>
+  </nav>
 
-      <!-- Mexico -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/tacos.jpg" class="card-img-top" alt="Tacos">
-          <div class="card-body text-center">
-            <h5 class="card-title">Mexico 🇲🇽</h5>
-            <a href="mexico.html" class="btn btn-primary">View Recipe</a>
+  <div class="section animate__animated animate__fadeInUp animate__delay-1s">
+    <h2 class="text-center mb-5"><strong>South American Dishes</strong></h2>
+
+    <!-- Mexico -->
+    <div class="country-heading">🇲🇽 Mexico</div>
+    <div class="row g-4">
+      <!-- Tacos -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🌮 Tacos</h5>
+          <img src="images/tacos.jpg" alt="Tacos">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('tacos')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Tacos', 'Tortillas, beef, chicken, vegetables, cheese', 'Fill tortillas with meat or veggies, top with cheese, serve warm.', 'images/tacos.jpg')">❤️</button>
+          </div>
+          <div id="tacos" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Tortillas</li><li>Beef or Chicken</li><li>Vegetables</li><li>Cheese</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Fill tortillas with meat or veggies, top with cheese, serve warm.</p>
           </div>
         </div>
       </div>
 
-      <!-- Brazil -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/feijoada.jpg" class="card-img-top" alt="Feijoada">
-          <div class="card-body text-center">
-            <h5 class="card-title">Brazil 🇧🇷</h5>
-            <a href="brazil.html" class="btn btn-primary">View Recipe</a>
+      <!-- Enchiladas -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🌯 Enchiladas</h5>
+          <img src="images/enchiladas.jpg" alt="Enchiladas">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('enchiladas')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Enchiladas', 'Tortillas, shredded chicken, enchilada sauce, cheese', 'Roll chicken in tortillas, pour sauce over, sprinkle cheese, and bake.', 'images/enchiladas.jpg')">❤️</button>
+          </div>
+          <div id="enchiladas" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Tortillas</li><li>Shredded Chicken</li><li>Enchilada Sauce</li><li>Cheese</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Roll chicken in tortillas, pour sauce over, sprinkle cheese, and bake.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brazil -->
+    <div class="country-heading">🇧🇷 Brazil</div>
+    <div class="row g-4">
+      <!-- Feijoada -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🍲 Feijoada</h5>
+          <img src="images/feijoada.jpg" alt="Feijoada">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('feijoada')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Feijoada', 'Black beans, pork or beef, garlic, onions', 'Cook beans with meat and spices until tender.', 'images/feijoada.jpg')">❤️</button>
+          </div>
+          <div id="feijoada" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Black beans</li><li>Pork or Beef</li><li>Garlic</li><li>Onions</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Cook beans with meat and spices until tender.</p>
           </div>
         </div>
       </div>
 
-      <!-- Colombia -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/arepas.jpg" class="card-img-top" alt="Arepas">
-          <div class="card-body text-center">
-            <h5 class="card-title">Colombia 🇨🇴</h5>
-            <a href="colombia.html" class="btn btn-primary">View Recipe</a>
+      <!-- Pão de Queijo -->
+      <div class="col-md-6">
+        <div class="dish-box recipe">
+          <h5>🧀 Pão de Queijo</h5>
+          <img src="images/pao_de_queijo.jpg" alt="Pão de Queijo">
+          <div class="d-flex gap-2">
+            <button class="btn btn-orange" onclick="toggleDetails('pao')">📖 View Recipe</button>
+            <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Pão de Queijo', 'Tapioca flour, cheese, eggs, milk, butter', 'Mix all ingredients, shape into balls, and bake.', 'images/pao_de_queijo.jpg')">❤️</button>
+          </div>
+          <div id="pao" class="recipe-details">
+            <p><strong>🧂 Ingredients:</strong></p>
+            <ul><li>Tapioca flour</li><li>Cheese</li><li>Eggs</li><li>Milk</li><li>Butter</li></ul>
+            <p><strong>👨‍🍳 Preparation:</strong> Mix all ingredients, shape into balls, and bake.</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Cuba -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/ropa-vieja.jpg" class="card-img-top" alt="Ropa Vieja">
-          <div class="card-body text-center">
-            <h5 class="card-title">Cuba 🇨🇺</h5>
-            <a href="cuba.html" class="btn btn-primary">View Recipe</a>
-          </div>
-        </div>
+
+   <!-- Colombia -->
+<div class="country-heading">🇨🇴 Colombia</div>
+<div class="row g-4">
+  <!-- Arepas -->
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🫓 Arepas</h5>
+      <img src="images/arepas.jpg" alt="Arepas">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('arepas')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Arepas', 'Cornmeal, cheese, butter, meat (optional)', 'Form dough from cornmeal and cheese, grill or bake.', 'images/arepas.jpg')">❤️</button>
       </div>
-
+      <div id="arepas" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul><li>Cornmeal</li><li>Cheese</li><li>Butter</li><li>Optional Meat</li></ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Form dough from cornmeal and cheese, grill or bake.</p>
+      </div>
     </div>
   </div>
 
+  <!-- Bandeja Paisa -->
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍛 Bandeja Paisa</h5>
+      <img src="images/bandeja_paisa.jpg" alt="Bandeja Paisa">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('bandeja')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Bandeja Paisa', 'Rice, beans, ground meat, chicharrón, egg, plantain, avocado', 'Assemble all ingredients on a large plate and serve.', 'images/bandeja_paisa.jpg')">❤️</button>
+      </div>
+      <div id="bandeja" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul>
+          <li>Rice</li>
+          <li>Beans</li>
+          <li>Ground Meat</li>
+          <li>Chicharrón</li>
+          <li>Fried Egg</li>
+          <li>Plantain</li>
+          <li>Avocado</li>
+        </ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Assemble all ingredients on a large plate and serve.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Cuba -->
+<div class="country-heading">🇨🇺 Cuba</div>
+<div class="row g-4">
+  <!-- Ropa Vieja -->
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🥩 Ropa Vieja</h5>
+      <img src="images/ropa_vieja.jpg" alt="Ropa Vieja">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('ropa')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Ropa Vieja', 'Shredded beef, peppers, onions, tomatoes', 'Cook beef with veggies and seasonings until tender.', 'images/ropa_vieja.jpg')">❤️</button>
+      </div>
+      <div id="ropa" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul><li>Shredded Beef</li><li>Peppers</li><li>Onions</li><li>Tomatoes</li></ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Cook beef with veggies and seasonings until tender.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tostones -->
+  <div class="col-md-6">
+    <div class="dish-box recipe">
+      <h5>🍌 Tostones</h5>
+      <img src="images/tostones.jpg" alt="Tostones">
+      <div class="d-flex gap-2">
+        <button class="btn btn-orange" onclick="toggleDetails('tostones')">📖 View Recipe</button>
+        <button class="btn btn-light btn-fav" onclick="addToFavorites(this, 'Tostones', 'Green plantains, oil, salt', 'Slice plantains, fry, smash, and fry again until crispy.', 'images/tostones.jpg')">❤️</button>
+      </div>
+      <div id="tostones" class="recipe-details">
+        <p><strong>🧂 Ingredients:</strong></p>
+        <ul><li>Green Plantains</li><li>Oil</li><li>Salt</li></ul>
+        <p><strong>👨‍🍳 Preparation:</strong> Slice plantains, fry, smash, and fry again until crispy.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="fav-msg" class="favorite-message text-center"></div>
+
   <script>
-    fetch('../Home.page/navbar.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('navbar').innerHTML = data);
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+
+    function addToFavorites(button, name, ingredients, preparation, image = "") {
+      let favorites = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const index = favorites.findIndex(d => d.name === name);
+      let message = "";
+
+      if (index === -1) {
+        favorites.push({ name, ingredients, preparation, image });
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.add("active");
+        message = "❤️ Added to favorites!";
+      } else {
+        favorites.splice(index, 1);
+        localStorage.setItem("favoriteDishes", JSON.stringify(favorites));
+        if (button) button.classList.remove("active");
+        message = "❌ Removed from favorites";
+      }
+
+      showFavoriteMessage(message);
+    }
+
+    function showFavoriteMessage(msg) {
+      let box = document.getElementById("fav-msg");
+      box.innerText = msg;
+      box.style.display = "block";
+      setTimeout(() => {
+        box.style.display = "none";
+      }, 2000);
+    }
+
+    window.onload = function () {
+      const saved = JSON.parse(localStorage.getItem("favoriteDishes") || "[]");
+      const buttons = document.querySelectorAll(".btn-fav");
+      buttons.forEach(btn => {
+        const match = btn.getAttribute("onclick").match(/'([^']+)'/);
+        if (match) {
+          const name = match[1];
+          if (saved.find(d => d.name === name)) {
+            btn.classList.add("active");
+          }
+        }
+      });
+    };
   </script>
+
 </body>
 </html>
+
