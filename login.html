@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Login - GLOBAL BITES</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   <style>
     body {
       background-color: #fff4e6;
@@ -17,7 +20,7 @@
       padding: 30px;
       border-radius: 15px;
       background-color: #ffffff;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .btn-orange {
@@ -33,21 +36,65 @@
   </style>
 </head>
 <body>
-
   <div class="login-box">
     <h2 class="text-center mb-4">Login to GLOBAL BITES</h2>
     <form>
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="you@example.com"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
       </div>
       <button type="submit" class="btn btn-orange w-100">Login</button>
     </form>
   </div>
 
+  <script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert(data.message); // تسجيل الدخول ناجح
+          window.location.href = 'index.html'; // توجيه للصفحة الرئيسية
+        } else {
+          alert(data.message); // بيانات دخول خاطئة
+        }
+      } catch (err) {
+        alert('حدث خطأ في الاتصال بالسيرفر');
+        console.error(err);
+      }
+    });
+  </script>
 </body>
 </html>
+...
